@@ -1,5 +1,5 @@
 ###
-Kaching Cakefile
+Cakefile
 ###
 {exec, spawn} = require 'child_process'
 
