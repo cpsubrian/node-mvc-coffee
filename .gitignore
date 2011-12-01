@@ -1,0 +1,4 @@
+bin/logs/*
+bin/pids/*
+conf/*.json
+node_modules/*

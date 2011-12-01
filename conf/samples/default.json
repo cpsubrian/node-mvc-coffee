@@ -1,0 +1,13 @@
+
+{
+  "site": {
+    "title": "Site Title"
+  },
+  "port": 3000,
+  "session": {
+    "secret": "shh.... It's a secret"
+  },
+  "cluster": {
+    "workers": 1
+  }
+}

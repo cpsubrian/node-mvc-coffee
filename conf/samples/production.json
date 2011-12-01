@@ -1,0 +1,7 @@
+
+{
+  "mongodb": {
+    "host": "localhost",
+    "db": "app_prod"
+  }
+}
