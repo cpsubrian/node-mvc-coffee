@@ -13,7 +13,7 @@ boot app
 
 app.start = () ->
   app.listen nconf.get('port')
-  msg = "Express server listening on port %d in %s mode"
+  msg = "\nExpress server listening on port %d in %s mode"
   console.log msg, app.address().port, app.settings.env
 
 # Only listen on $ node app.js

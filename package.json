@@ -13,7 +13,6 @@
     "express": "2.4.x",
     "jqtpl": "1.0.x",
     "less": "1.1.x",
-    "mongoose": "2.3.x",
     "nconf": "0.5.x"
   },
   "devDependencies" : {

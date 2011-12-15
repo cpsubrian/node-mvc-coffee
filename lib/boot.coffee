@@ -64,8 +64,9 @@ booter = (app) ->
       app.register ".html", require("jqtpl").express
       fixLessCompiler()
       app.use express.compiler(
-        src: "public"
-        enable: [ "less" ]
+        src: "#{app.basePath}/assets"
+        dest: "#{app.basePath}/public"
+        enable: [ "less", "coffeescript" ]
       )
       app.use express.static("public")
       app.use express.bodyParser()
@@ -122,7 +123,7 @@ fixLessCompiler = () ->
       cache.less.render = (str, options, fn) ->
         if typeof (options) is "function"
           fn = options
-          options = paths: [ "public/css" ]
+          options = paths: [ "assets/styles" ]
         origRender.call this, str, options, fn
     less = cache.less
     try

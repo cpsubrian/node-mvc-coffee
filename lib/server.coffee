@@ -25,6 +25,6 @@ app.use cluster.reload()
 module.exports = server =
   start: ->
     app.listen port
-    console.log 'Starting up the cluster server on port %d', port
+    console.log '\nStarting up the cluster server on port %d', port
 
 server.start() unless module.parent

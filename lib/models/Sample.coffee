@@ -11,5 +11,3 @@ module.exports = (app) ->
 
     getName: ->
       @name
-
-  Sample
