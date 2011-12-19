@@ -5,35 +5,27 @@ module.exports = (app) ->
   browser = tobi.createBrowser app
   methods =
     # Returns a macro for making GET requests.
-    get: (path, test) ->
-      (done) ->
-        browser.get path, (res, $) ->
-          test(res, $)
-          done()
+    get: (path, next) ->
+      browser.get path, (res, $) ->
+        next(res, $)
 
     # Returns a macro for making POST requests.
-    post: (path, data, test) ->
+    post: (path, data, next) ->
       options =
         body: JSON.stringify data
         headers: header
-      (done) ->
-        browser.post path, options, (res, $) ->
-          test(res, $)
-          done()
+      browser.post path, options, (res, $) ->
+        next(res, $)
 
     # Returns a macro for making PUT requests.
-    put: (path, data, test) ->
+    put: (path, data, next) ->
       options =
         body: JSON.stringify data
         headers: header
-      (done) ->
-        browser.put path, options, (res, $) ->
-          test(res, $)
-          done()
+      browser.put path, options, (res, $) ->
+        next(res, $)
 
     # Returns a macro for making GET requests.
-    del: (path, test) ->
-      (done) ->
-        browser.del path, (res, $) ->
-          test(res, $)
-          done()
+    del: (path, next) ->
+      browser.del path, (res, $) ->
+        next(res, $)
